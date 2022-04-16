@@ -1,4 +1,4 @@
- /**
+/**
  *Submitted for verification at Etherscan.io on 2021-12-08
 */
 
@@ -22,7 +22,15 @@ pragma solidity ^0.8.0;
  *
  * This contract is only required for intermediate, library-like contracts.
  */
+abstract contract Context {
+    function _msgSender() internal view virtual returns (address) {
+        return msg.sender;
+    }
 
+    function _msgData() internal view virtual returns (bytes calldata) {
+        return msg.data;
+    }
+}
 
 // File: @openzeppelin/contracts/utils/introspection/IERC165.sol
 pragma solidity ^0.8.0;
@@ -239,7 +247,7 @@ pragma solidity ^0.8.0;
  *
  * Alternatively, {ERC165Storage} provides an easier to use but more expensive implementation.
  */
-abstract contract ERC165 is IERC165 {
+OwnableERC165 is IERC165 {
     /**
      * @dev See {IERC165-supportsInterface}.
      */
